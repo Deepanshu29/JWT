@@ -8,21 +8,17 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
-  _registerUrl = 'api/register';
-  _loginUrl = 'api/login';
-
-  _eventUrl = 'api/events';
 
   Register(user){
-    return this.http.post<any>(this._registerUrl,user);
+    return this.http.post<any>('api/register',user);
   }
 
   Login(user){
-    return this.http.post<any>(this._loginUrl,user);
+    return this.http.post<any>('api/login',user);
   }
 
   event(){
-    return this.http.get(this._eventUrl);
+    return this.http.get<any>('api/events');
   }
 
   loggedIn(){
