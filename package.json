@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "node server",
     "dev": "nodemon server",
-    "postinstall": "ng build",
-    "build": "ng build",
+    "postinstall": "ng build --aot",
+    "build": "ng build --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
