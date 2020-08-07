@@ -9,7 +9,7 @@ const api = require('./Routes&Models/routes/routes');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
-app.use(express.static(path.join(__dirname,'dist/auth/')));
+app.use(express.static(path.join(__dirname,'dist/auth/index.html')));
  
 app.use('/api',api);
 
