@@ -10,15 +10,15 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   Register(user){
-    return this.http.post<any>('api/register',user);
+    return this.http.post<any>('/api/register',user);
   }
 
   Login(user){
-    return this.http.post<any>('api/login',user);
+    return this.http.post<any>('/api/login',user);
   }
 
   event(){
-    return this.http.get<any>('api/events');
+    return this.http.get<any>('/api/events');
   }
 
   loggedIn(){
