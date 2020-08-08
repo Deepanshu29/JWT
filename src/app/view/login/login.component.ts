@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.auth.Login(this.loginForm.value).subscribe(
       data=> {
         localStorage.setItem('token',data.token);
-        this.router.navigate(['/add-event'])
+        this.router.navigate(['/event'])
       },
       err=>{
         console.log(err);
