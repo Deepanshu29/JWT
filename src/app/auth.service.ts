@@ -21,6 +21,10 @@ export class AuthService {
     return this.http.get<any>('/api/events');
   }
 
+  addEvent(event){
+    return this.http.post<any>('/api/events', event);
+  }
+
   loggedIn(){
     return !!localStorage.getItem('token')
   }

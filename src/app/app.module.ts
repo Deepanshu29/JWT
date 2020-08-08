@@ -12,6 +12,7 @@ import { RegisterComponent } from './view/register/register.component';
 import { EventComponent } from './view/event/event.component';
 import { AuthService } from './auth.service';
 import { RouteGuardGuard } from './route-guard.guard';
+import { AddEventComponent } from './view/add-event/add-event.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RouteGuardGuard } from './route-guard.guard';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    EventComponent
+    EventComponent,
+    AddEventComponent
   ],
   imports: [
     BrowserModule,

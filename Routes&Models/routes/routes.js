@@ -91,7 +91,7 @@ router.post('/login', (req,res)=>{
     });
 });
 
-router.get('/events',verifyToken,(req,res)=>{
+router.get('/events',(req,res)=>{
     eventModel.find({}).exec()
     .then(data=>{
         res.status(200).send(data);
@@ -101,7 +101,7 @@ router.get('/events',verifyToken,(req,res)=>{
     })
 })
 
-router.post('/events',(req,res)=>{
+router.post('/events',verifyToken,(req,res)=>{
     const event = new eventModel({
         EventDate: Date.now(),
         EventName: req.body.ename,
