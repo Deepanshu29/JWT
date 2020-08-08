@@ -10,11 +10,15 @@ import { Router } from '@angular/router';
 })
 export class EventComponent implements OnInit {
   events:any= [];
-  constructor(private auth: AuthService, private router: Router) { }
+  id:String = '';
+  constructor(public auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.auth.event().subscribe(
-      res=>{console.log(res);this.events = res},
+      res=>{
+        console.log(res),
+        this.events = res
+      },
       err=> {
         if(err instanceof HttpErrorResponse){
           if(err.status === 401){
@@ -25,4 +29,16 @@ export class EventComponent implements OnInit {
     )
   }
 
+  delete(id:String){
+    if(confirm('Are you sure you want to delete??'))  {
+    this.auth.eventDelete(id).subscribe(
+        res => 
+        {
+          console.log(res);
+          this.ngOnInit();
+        },
+        err => console.log(err)
+    );
+  }
+}
 }

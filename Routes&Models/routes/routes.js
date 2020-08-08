@@ -116,4 +116,14 @@ router.post('/events',verifyToken,(req,res)=>{
     });
 })
 
+router.delete('/events/:id',(req,res)=>{
+    eventModel.findByIdAndDelete(req.params.id).exec()
+    .then(deletedData=>{
+        res.status(200).json({message: 'Event got Deleted'});
+    })
+    .catch(err=>{
+        res.status(500).json({message:'Cannot Delete this Item'});
+    })
+});
+
 module.exports = router;

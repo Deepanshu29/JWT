@@ -34,6 +34,10 @@ export class AuthService {
     this.router.navigate(['/']);
   }
 
+  eventDelete(id){
+    return this.http.delete(`/api/events/${id}`)
+  }
+
   getToken(){
     return localStorage.getItem('token')
   }

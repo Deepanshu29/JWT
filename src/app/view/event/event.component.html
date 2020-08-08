@@ -7,6 +7,8 @@
             </div>
             <div class="card-body text-center">{{event.EventDate | date: 'mediumDate'}}</div>
             <div class="card-footer text-center">{{event.EventDesc}}</div>
+            <button type="button" (click)="delete(event._id)" [class.disabled]="!auth.loggedIn()" class="btn btn-light card-footer text-center">Delete</button>
+            
         </div>
     </div>
 </div>
