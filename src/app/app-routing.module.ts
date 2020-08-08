@@ -5,6 +5,7 @@ import { EventComponent } from './view/event/event.component';
 import { RegisterComponent } from './view/register/register.component';
 import { LoginComponent } from './view/login/login.component';
 import { RouteGuardGuard } from './route-guard.guard';
+import { AddEventComponent } from './view/add-event/add-event.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,11 @@ const routes: Routes = [
   },
   {
     path: 'event',
-    component: EventComponent,
+    component: EventComponent
+  },
+  {
+    path: 'add-event',
+    component: AddEventComponent,
     canActivate: [RouteGuardGuard]
   },
   {
