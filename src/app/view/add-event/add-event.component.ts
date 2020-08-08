@@ -22,7 +22,7 @@ export class AddEventComponent implements OnInit {
 
   onSubmit(){
     this.auth.addEvent(this.eventForm.value).subscribe(
-      data => console.log(data),
+      data => {this.router.navigate(['/event'])},
       err => console.log(err)
     )
   }
