@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
     this.auth.Register(this.registerForm.value).subscribe(
       data=>{
         localStorage.setItem('token',data.token);
-        this.router.navigate(['/event']);
+        this.router.navigate(['/add-event']);
       },
       err=>console.log(err)
     )
