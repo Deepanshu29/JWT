@@ -1,4 +1,22 @@
-<div *ngIf="event">
-    <p>{{ event.EventName }}</p>
-    <p>{{ event.EventDesc }}</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1 mt-5">
+            <div class="card" *ngIf="event">
+                <div class="card-header text-center"><h1>{{ event.EventName }}</h1></div>
+                <div class="card-body text-center">
+                    <h5>{{ event.EventDesc }}</h5>
+                    <p class="text-center mt-5">Choose number of Tickets</p>
+                    <small class="text-center text-muted">Number of Tickets Available : {{ NoOfTicketAvailable }}</small>
+                    <div class="col-md-3 offset-md-4 p-0 float-right mt-3" id="BorderBtn">
+                        <button (click)="decrement()" id="BtnDecrement" class="badge m-0 px-3 text-center"><h6 class="buttonText">-</h6></button>
+                        <span class="text-center mx-3">{{ NoOfTicket }}</span>
+                        <button (click)="increment()" id="BtnIncrement" class="badge m-0 px-3 text-center"><h6 class="buttonText">+</h6></button>
+                    </div>
+                    <br>
+                        <h5>Total Price : {{ priceForOneTicket*NoOfTicket | currency: 'INR': 'symbol': '3.0-0' }}</h5>
+                </div>
+                <div class="card-footer text-right"><button class="btn btn-outline-danger"><h6>Buy Now >></h6></button></div>
+            </div>
+        </div>
+    </div>
 </div>

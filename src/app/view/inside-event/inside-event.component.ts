@@ -9,7 +9,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class InsideEventComponent implements OnInit {
   public eventID;
+  public NoOfTicketAvailable = 10;
+  public NoOfTicket = 1;
   public event;
+  public priceForOneTicket = 100;
   
   constructor(private auth: AuthService, private router: Router, private ar: ActivatedRoute) { }
 
@@ -26,4 +29,20 @@ export class InsideEventComponent implements OnInit {
     err=> console.log(err),
   )
 }
+
+increment(){
+  if(this.NoOfTicket == this.NoOfTicketAvailable){
+    return this.NoOfTicket
+  }else{
+    return this.NoOfTicket = this.NoOfTicket + 1;
+  }
 }
+decrement(){
+  if(this.NoOfTicket == 1){
+    return this.NoOfTicket
+  }else{
+    return this.NoOfTicket = this.NoOfTicket - 1;
+  }
+}
+}
+

@@ -1,0 +1,13 @@
+.badge{
+    border: none;
+    color: white;
+}
+#BtnDecrement{
+    background-color: #ff3232;
+}
+#BtnIncrement{
+    background-color: #6fff6f;
+}
+.buttonText{
+    font-size: 25px;
+}
