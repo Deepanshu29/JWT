@@ -32,7 +32,11 @@ export class EventComponent implements OnInit {
   }
 
   onSelect(e){
-    this.router.navigate(['/event',e._id]);
+    if(this.auth.loggedIn()){
+      this.router.navigate(['/event',e._id]);
+    }else{
+      this.router.navigate(['/event']);
+    } 
   }
 
   delete(id:String){
