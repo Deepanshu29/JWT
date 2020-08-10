@@ -9,11 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./event.component.css']
 })
 export class EventComponent implements OnInit {
-  events:any= [];
-  id:String = '';
+  public events:any= [];
+  public id;
   constructor(public auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    
+
     this.auth.event().subscribe(
       res=>{
         console.log(res),
@@ -29,7 +31,12 @@ export class EventComponent implements OnInit {
     )
   }
 
+  onSelect(e){
+    this.router.navigate(['/event',e._id]);
+  }
+
   delete(id:String){
+    this.id = id;
     if(confirm('Are you sure you want to delete??'))  {
     this.auth.eventDelete(id).subscribe(
         res => 
@@ -41,4 +48,5 @@ export class EventComponent implements OnInit {
     );
   }
 }
+
 }

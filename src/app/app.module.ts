@@ -13,6 +13,7 @@ import { EventComponent } from './view/event/event.component';
 import { AuthService } from './auth.service';
 import { RouteGuardGuard } from './route-guard.guard';
 import { AddEventComponent } from './view/add-event/add-event.component';
+import { InsideEventComponent } from './view/inside-event/inside-event.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddEventComponent } from './view/add-event/add-event.component';
     LoginComponent,
     RegisterComponent,
     EventComponent,
-    AddEventComponent
+    AddEventComponent,
+    InsideEventComponent
   ],
   imports: [
     BrowserModule,

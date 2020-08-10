@@ -126,4 +126,14 @@ router.delete('/events/:id',(req,res)=>{
     })
 });
 
+router.get('/events/:id', (req,res)=>{
+    eventModel.findById(req.params.id).exec()
+    .then(data=>{
+        res.status(200).json(data);
+    })
+    .catch(err=>{
+        res.status(500).json({message: 'Error while getting the data'})
+    })
+})
+
 module.exports = router;

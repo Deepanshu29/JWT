@@ -6,6 +6,7 @@ import { RegisterComponent } from './view/register/register.component';
 import { LoginComponent } from './view/login/login.component';
 import { RouteGuardGuard } from './route-guard.guard';
 import { AddEventComponent } from './view/add-event/add-event.component';
+import { InsideEventComponent } from './view/inside-event/inside-event.component'; 
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'event',
     component: EventComponent
+  },
+  {
+    path: 'event/:id',
+    component: InsideEventComponent
   },
   {
     path: 'add-event',

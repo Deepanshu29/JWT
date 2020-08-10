@@ -3,7 +3,7 @@
         <div class="card mt-3">
             <div class="card-title mt-3 text-center"><h5>{{event.EventName}}</h5></div>
             <div class="text-center">
-                <button class="btn btn-primary">Buy Ticket</button>
+                <button (click)="onSelect(event)" class="btn btn-primary">Buy Ticket</button>
             </div>
             <div class="card-body text-center">{{event.EventDate | date: 'mediumDate'}}</div>
             <div class="card-footer text-center">{{event.EventDesc}}</div>
