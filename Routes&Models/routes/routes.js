@@ -126,7 +126,7 @@ router.delete('/events/:id',(req,res)=>{
     })
 });
 
-router.get('/events/:id', (req,res)=>{
+router.get('/events/:id',verifyToken, (req,res)=>{
     eventModel.findById(req.params.id).exec()
     .then(data=>{
         res.status(200).json(data);
