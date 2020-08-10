@@ -35,7 +35,7 @@ export class EventComponent implements OnInit {
     if(this.auth.loggedIn()){
       this.router.navigate(['/event',e._id]);
     }else{
-      this.router.navigate(['/event']);
+      this.router.navigate(['/login']);
     } 
   }
 
